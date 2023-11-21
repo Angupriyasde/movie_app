@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
     before_action :set_omdb_service, only: [:index, :search, :show, :add_to_favorites]
   
     def index
-      @movies = @omdb_service.search_movies('latest')
+      @movies = @omdb_service.search_movies('2023')
     end
   
     def search
