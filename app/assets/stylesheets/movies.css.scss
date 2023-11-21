@@ -1,0 +1,116 @@
+
+.search-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.search-box input[type="text"] {
+    padding: 8px;
+    width: 90%;
+}
+
+.search-btn {
+    height: 30px;
+    color: white;
+    background-color: royalblue;
+}
+
+.movies-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .movie-item {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .thumbnail {
+    width: 50%; 
+    height: auto;
+  }
+  
+  .movie-details {
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .movies-list {
+      justify-content: center;
+    }
+  }
+
+
+.movie-details {
+    margin: 20px;
+  }
+  
+  .movie-info {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .movie-poster {
+    max-width: 300px; 
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .details {
+    flex: 1;
+  }
+  
+  .btn {
+    margin-top: 10px;
+  }
+  
+  .fav-btn {
+    padding: 5px;
+    margin: 10px;
+    background: pink;
+  }
+
+ 
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+  
+   .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #333;
+        color: #fff; 
+        margin-bottom: 10px;
+    }
+
+    h1 {
+     margin: 0;
+    }
+
+    .fav-btn {
+        margin-top: 10px;
+        background-color: pink;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .fav-btn:hover {
+        background-color: #3071a9; 
+    }
+
+    .add-fav {
+        margin: 10px;
+        background: pink;
+        padding: 10px;
+    }

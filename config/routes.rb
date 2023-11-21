@@ -7,4 +7,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root 'movies#index'
+
+  resources :movies,  param: :imdbID,  only: [:index, :show] do
+    collection do
+      get 'search'
+      post 'add_to_favorites'
+      get 'view_favorites'
+    end
+  end
 end

@@ -1,0 +1,27 @@
+
+
+<div class="header">
+    <h1><%= @movie["Title"] %> (<%= @movie["Year"] %>)</h1>
+    <%= button_to 'Back to Movies', { controller: 'movies', action: 'index' }, method: :get, class: 'back-btn' %>
+</div>
+<div class="movie-details">
+  
+
+  <div class="movie-info">
+    <%= image_tag(@movie["Poster"], alt: @movie["Title"], class: 'movie-poster') if @movie["Poster"].present? %>
+
+    <div class="details">
+      <p><strong>Plot:</strong> <%= @movie["Plot"] %></p>
+      <p><strong>Genre:</strong> <%= @movie["Genre"] %></p>
+      <p><strong>Director:</strong> <%= @movie["Director"] %></p>
+      <p><strong>Actors:</strong> <%= @movie["Actors"] %></p>
+      <p><strong>Awards:</strong> <%= @movie["Awards"] %></p>
+      <p><strong>Country:</strong> <%= @movie["Country"] %></p>
+      <p><strong>Released:</strong> <%= @movie["Released"] %></p>
+      <p><strong>Language:</strong> <%= @movie["Language"] %></p>
+    </div>
+  </div>
+
+  <%= button_to 'Add to Favorites', { controller: 'movies', action: 'add_to_favorites', id: @movie["imdbID"], params: @movie }, method: :post, class: 'add-fav' %>
+
+</div>

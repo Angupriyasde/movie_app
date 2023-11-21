@@ -1,0 +1,31 @@
+
+
+
+<div class="header">
+  <h1>Movies</h1>
+  <%= button_to 'View Favorites', { controller: 'movies', action: 'view_favorites' }, method: :get, class: 'fav-btn' %>
+</div>
+
+
+
+
+<div class="search-box">
+  <%= form_tag(search_movies_path, method: :get) do %>
+    <%= text_field_tag :query, params[:query], placeholder: 'Search movies...' %>
+    <%= submit_tag 'Search', class: 'search-btn' %>
+  <% end %>
+</div>
+
+<ul class="movies-list">
+  <% @movies.each do |movie| %>
+    <li class="movie-item">
+      <%= link_to movie_path(movie["imdbID"]) do %>
+        <%= image_tag(Movie.thumbnail(movie["Poster"]), alt: movie["Title"], class: 'thumbnail') %>
+      <% end %>
+      <div class="movie-details">
+        <h3><%= link_to "#{movie["Title"]} (#{movie["Year"]})", movie_path(movie["imdbID"]) %></h3>
+        <%= button_to 'Add to Favorites', { controller: 'movies', action: 'add_to_favorites', id: movie["imdbID"], params: movie }, method: :post, class: 'add-fav' %>
+      </div>
+    </li>
+  <% end %>
+</ul>

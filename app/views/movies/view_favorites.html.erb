@@ -1,0 +1,22 @@
+
+
+
+<div class="header">
+    <h1>Favorite Movies</h1>
+    <%= button_to 'Back to Movies', { controller: 'movies', action: 'index' }, method: :get, class: 'back-btn' %>
+</div>
+
+<ul class="movies-list">
+  <% @movies.each do |movie| %>
+    <li class="movie-item">
+      <%= link_to movie_path(movie.imdbID) do %>
+        <%= image_tag(Movie.thumbnail(movie.poster), alt: movie.title, class: 'thumbnail') %>
+      <% end %>
+      <div class="movie-details">
+        <h3><%= link_to "#{movie.title} (#{movie.year})", movie_path(movie["imdbID"]) %></h3>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+
