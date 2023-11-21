@@ -5,20 +5,27 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Clone the project
 
-* System dependencies
+    `git clone https://github.com/Angupriyasde/movie_app.git`
 
-* Configuration
+* Install rails
 
-* Database creation
+    `gem install rails`
 
-* Database initialization
+* Install gems
 
-* How to run the test suite
+    `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+* Migrate DB
 
-* Deployment instructions
+    `rails db:migrate`
 
-* ...
+* Start server
+
+    `rails server`
+
+* Hit the url
+    
+    `http://localhost:3000/`
+
